@@ -6,18 +6,36 @@
 
 		<title>SAPUI5 Barcode Scanner</title>
 
-		<script id="sap-ui-bootstrap"
+<!-- 		<script id="sap-ui-bootstrap"
 			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-libs="sap.m"
 			data-sap-ui-theme="sap_belize"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-xx-bindingSyntax="complex"
 			data-sap-ui-resourceroots='{"barcodeScanner": ""}'>
+		</script> -->
+		<script type="text/javascript">
+			
+			// var oModel = new JSONModel(Device);
+			// oModel.setDefaultBindingMode("OneWay");
+			
+			// Disable the scan barcode button by default
+			// oModel.setProperty("/barcodeScanEnabled",false);
+			if(navigator && navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+				navigator.mediaDevices.getUserMedia({video:true}).then(function(stream){
+					// device supports video, which means will enable the scan button
+					// oModel.setProperty("/barcodeScanEnabled",true);
+				}).catch(function(err){
+					// not supported, barcodeScanEnabled already default to false
+				});
+			}
+			
+			// return oModel;
 		</script>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-		<script>
+		<!-- <script>
 			sap.ui.getCore().attachInit(function() {
 				new sap.m.Shell({
 					app: new sap.ui.core.ComponentContainer({
@@ -26,7 +44,7 @@
 					})
 				}).placeAt("content");
 			});
-		</script>
+		</script> -->
 	</head>
 
 	<body class="sapUiBody" id="content">
