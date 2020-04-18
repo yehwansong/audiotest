@@ -1,39 +1,35 @@
+<!DOCTYPE HTML>
 <html>
-<body>
-<button onclick="beginAudioCapture()">Begin Audio Capture</button>
-<script>
-  function beginAudioCapture() {
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
 
-    var AudioContext = window.AudioContext || window.webkitAudioContext;    
-    var context = new AudioContext();
-    var processor = context.createScriptProcessor(1024, 1, 1);
-    processor.connect(context.destination);
+		<title>SAPUI5 Barcode Scanner</title>
 
-    var handleSuccess = function (stream) {
-      var input = context.createMediaStreamSource(stream);
-      input.connect(processor);
+		<script id="sap-ui-bootstrap"
+			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{"barcodeScanner": ""}'>
+		</script>
 
-      var recievedAudio = false;
-      processor.onaudioprocess = function (e) {
-        // This will be called multiple times per second.
-        // The audio data will be in e.inputBuffer
-        if (!recievedAudio) {
-          recievedAudio = true;
-          console.log('got audio', e);
-        }
-      };
-    };
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-      if(navigator && navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
-        navigator.mediaDevices.getUserMedia({audeo:true}).then(handleSuccess).catch(function(err){
-          // not supported, barcodeScanEnabled already default to false
-        });
-      }
-      
-    //   return oModel;
-    // navigator.mediaDevices.getUserMedia({audio: true, video: false})
-    //   .then(handleSuccess);
-  }
-</script>
-</body>
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height  : "100%",
+						name 	: "barcodeScanner"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
 </html>
