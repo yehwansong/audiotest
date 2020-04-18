@@ -13,7 +13,7 @@ sap.ui.define([
 			// Disable the scan barcode button by default
 			oModel.setProperty("/barcodeScanEnabled",false);
 			if(navigator && navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
-				navigator.mediaDevices.getUserMedia({video:true}).then(function(stream){
+				navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
 					// device supports video, which means will enable the scan button
 					oModel.setProperty("/barcodeScanEnabled",true);
 				}).catch(function(err){
