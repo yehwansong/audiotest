@@ -3,25 +3,88 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta charset="UTF-8">
-
-		<title>SAPUI5 Barcode Scanner</title>
-
-<!-- 		<script id="sap-ui-bootstrap"
-			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
-			data-sap-ui-libs="sap.m"
-			data-sap-ui-theme="sap_belize"
-			data-sap-ui-compatVersion="edge"
-			data-sap-ui-xx-bindingSyntax="complex"
-			data-sap-ui-resourceroots='{"barcodeScanner": ""}'>
-		</script> -->
-	<!-- <script src="volume-meter.js"></script> -->
+	  <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+	  <meta name="apple-mobile-web-app-title" content="onlyWebPro" />
+		<title>aaa</title>
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.js"
+	  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	  crossorigin="anonymous"></script>
+	  <style type="text/css">
+	  	
+	html{
+		width: 100vw;
+		height: 100%
+	}
+	body{
+		width: 100vw;
+		height: 100%
+	}
+	*{
+		margin:0;
+		padding: 0
+	}
+	.a_wrap{
+		width: 100vw;
+		height: 100%;
+		background-image: url('image/bg_3.png');
+		background-size: 100% 100%;
+	}
+	.side_wrap{
+		position: absolute;
+		width: 50vw;
+		bottom: 0;
+		height: 100%;
+		overflow: hidden;
+		max-height: 100%
+	}
+	.side_wrap_l{
+		left: 0;
+		transform: scaleX(-1);
+		transform-origin: center;
+	}
+	.side_wrap_r{
+		left: 50vw
+	}
+	img{
+	    height: 100%;
+	    transform-origin: right bottom;
+	    position: absolute;
+	}
+	.bottom{
+	    position: absolute;
+	    width: 50%;
+	    height: 9.5%;
+	    background: black;
+	    bottom: 0;
+	    right: 0;
+	}
+	.narrow{
+	}
+	.a{
+		width: 50vw;
+		background-image: url('image/a-09.svg');
+		background-size: 100% 100%;
+		position: absolute;
+	}
+	.a_l{
+		left: 0;
+		transform-origin: left top
+	}
+	.a_r{
+		right: 0;
+		transform-origin: right top
+	}
+	  </style>
 		<script type="text/javascript">
-			
-			// var oModel = new JSONModel(Device);
-			// oModel.setDefaultBindingMode("OneWay");
-			
-			// Disable the scan barcode button by default
-			// oModel.setProperty("/barcodeScanEnabled",false);
+	function map_range(value, low1, high1, low2, high2) {
+	    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+	}
+	$(document).ready(function(){
+		var average = 0
+		var bound = 50
+		var min = 0
+		var max = 140
 			if(navigator && navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
 				navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(function(stream){
 					console.log('111111')
@@ -30,12 +93,9 @@
 					    || false; 
 
 					if (AudioContext) {
-					    // Do whatever you want using the Web Audio API
 					    var ctx = new AudioContext;
 					    // ...
 					} else {
-					    // Web Audio API is not supported
-					    // Alert the user
 					    alert("Sorry, but the Web Audio API is not supported by your browser. Please, consider upgrading to the latest version or downloading Google Chrome or Mozilla Firefox");
 					}
 					audioContext = new AudioContext();
@@ -59,35 +119,52 @@
 					    values += (array[i]);
 					  }
 
-					  var average = values / length;
+					  average = values / length;
+					  // average = 80
 
 					console.log(Math.round(average));
-					// colorPids(average);
+		if(average<bound){
+		    	$('.side_wrap').css({'height':map_range(average, min, bound, 60, 75)+'%'})
+				$('img').css({'width':'95%'})
+				$('img').css({'transform': 'scaleX(1.1) scaleY(1)'})
+				$('.bottom').css({'height': '14.5%'})
+		    	$('.a').css({'transform':'scale(1)'})
+		    	$('.a').css({'width': '50vw'})
+		    	$('.a').css({'height':100-map_range(average, min, bound, 60, 75)+'%'})
+		}else{
+				$('.side_wrap').css({'height':'100%'})
+				$('img').css({'width':map_range(average, bound, max, 69, 46)+'%'})
+				$('img').css({'transform':'scaleX('+map_range(average, bound, max, 1.12, 1.8)+') scaleY('+map_range(average, bound, max, 1.12, 2.2)+')'})
+				$('.bottom').css({'height': '12.8%'})
+				$('.bottom').css({'width':map_range(average, bound, max, 50, 75)+'%'})
+		    	$('.a').css({'transform':'scale('+map_range(average, bound, max, 1, 1.12)+')'})
+		    	$('.a').css({'width': '32vw'})
+		    	$('.a').css({'height': '23%'})
+		}
 					}
 				})
 				.catch(function(err) {
-    /* handle the error */
 				});
 			}
-			
-			// return oModel;
+	})
 		</script>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-
-		<!-- <script>
-			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
-						height  : "100%",
-						name 	: "barcodeScanner"
-					})
-				}).placeAt("content");
-			});
-		</script> -->
 	</head>
 
 	<body class="sapUiBody" id="content">
+	<div class="a_wrap">
+		<div class="a a_l"></div>
+		<div class="a a_r"></div>
+		<div class="side_wrap side_wrap_l">
+			<img src="image/side-08.svg">
+			<div class="bottom"></div>
+		</div>
+		<div class="side_wrap side_wrap_r">
+			<img src="image/side-08.svg">
+			<div class="bottom"></div>
+		</div>
+	</div>
 	</body>
 
 </html>

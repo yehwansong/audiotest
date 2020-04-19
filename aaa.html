@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+  <meta name="apple-mobile-web-app-title" content="onlyWebPro" />
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<style>
+	html{
+		width: 100vw;
+		height: 100%
+	}
+	body{
+		width: 100vw;
+		height: 100%
+	}
+	*{
+		margin:0;
+		padding: 0
+	}
+	.a_wrap{
+		width: 100vw;
+		height: 100%;
+		background-image: url('image/bg_3.png');
+		background-size: 100% 100%;
+	}
+	.side_wrap{
+		position: absolute;
+		width: 50vw;
+		bottom: 0;
+		height: 100%;
+		overflow: hidden;
+		max-height: 100%
+	}
+	.side_wrap_l{
+		left: 0;
+		transform: scaleX(-1);
+		transform-origin: center;
+	}
+	.side_wrap_r{
+		left: 50vw
+	}
+	img{
+	    height: 100%;
+	    transform-origin: right bottom;
+	    position: absolute;
+	}
+	.bottom{
+	    position: absolute;
+	    width: 50%;
+	    height: 9.5%;
+	    background: black;
+	    bottom: 0;
+	    right: 0;
+	}
+	.narrow{
+	}
+	.a{
+		width: 50vw;
+		background-image: url('image/a-09.svg');
+		background-size: 100% 100%;
+		position: absolute;
+	}
+	.a_l{
+		left: 0;
+		transform-origin: left top
+	}
+	.a_r{
+		right: 0;
+		transform-origin: right top
+	}
+</style>
+<script type="text/javascript">
+	function map_range(value, low1, high1, low2, high2) {
+	    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+	}
+	$(document).ready(function(){
+		// $('.side_wrap').css({'height':'60%'})
+		// $('img').css({'width':'95%'})
+		// $('img').css({'transform': 'scaleX(1.1) scaleY(1)'})
+		// $('.bottom').css({'height': '14.5%'})
+  //   	$('.a').css({'transform':'scale(1)'})
+  //   	$('.a').css({'width': '50vw'})
+  //   	$('.a').css({'height': '40%'})
+// // 
+		// $('.side_wrap').css({'height':'100%'})
+		// $('img').css({'width':'69%'})
+		// $('img').css({'transform': 'scaleX(1.12) scaleY(1.12)'})
+		// $('.bottom').css({'height': '12.8%'})
+		$('.bottom').css({'width': '50%'})
+  //   	$('.a').css({'transform':'scale(1)'})
+  //   	$('.a').css({'width': '32vw'})
+  //   	$('.a').css({'height': '23%'})
+// // 
+		$('.side_wrap').css({'height':'100%'})
+		$('img').css({'width':'46%'})
+		$('img').css({'transform': 'scaleX(1.8) scaleY(2.2)'})
+		$('.bottom').css({'height': '12.8%'})
+		$('.bottom').css({'width': '75%'})
+    	$('.a').css({'transform':'scale(1.12)'})
+    	$('.a').css({'width': '32vw'})
+    	$('.a').css({'height': '23%'})
+
+
+		// var bound = 60
+		// var min = 0
+		// var max = 140
+// if(average>bound){
+//     	$('.side_wrap').css({'height':map_range(average, min, bound, 60, 75)+'%'})
+// 		$('img').css({'width':'95%'})
+// 		$('img').css({'transform': 'scaleX(1.1) scaleY(1)'})
+// 		$('.bottom').css({'height': '14.5%'})
+//     	$('.a').css({'transform':'scale(1)'})
+//     	$('.a').css({'width': '50vw'})
+//     	$('.a').css({'height':100-map_range(average, min, bound, 60, 75)+'%'})
+// }else{
+// 		$('.side_wrap').css({'height':'100%'})
+// 		$('img').css({'width':map_range(average, bound, min, 69, 46)+'%'})
+// 		$('img').css({'transform':'scaleX('+map_range(average, bound, max, 1.12, 1.12)+') scaleY('+map_range(average, bound, max, 1.8, 2.2)+')'})
+// 		$('.bottom').css({'height': '12.8%'})
+		// $('.bottom').css({'width':map_range(average, bound, max, 50, 75)+'%'})
+//     	$('.a').css({'transform':'scale('+map_range(average, bound, max, 1, 1.12)+')'})
+//     	$('.a').css({'width': '32vw'})
+//     	$('.a').css({'height': '23%'})
+// }
+// }
+
+	})
+</script>
+<body>
+	<div class="a_wrap">
+		<div class="a a_l"></div>
+		<div class="a a_r"></div>
+		<div class="side_wrap side_wrap_l">
+			<img src="image/side-08.svg">
+			<div class="bottom"></div>
+		</div>
+		<div class="side_wrap side_wrap_r">
+			<img src="image/side-08.svg">
+			<div class="bottom"></div>
+		</div>
+	</div>
+</body>
+</html>
