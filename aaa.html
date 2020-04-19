@@ -72,6 +72,14 @@
 		right: 0;
 		transform-origin: right top
 	}
+	.middle{
+	    position: absolute;
+	    left: 0;
+	    background: black;
+	    width: 50vw;
+	    top: 50%;
+	    height: 13%;
+	}
 </style>
 <script type="text/javascript">
 	function map_range(value, low1, high1, low2, high2) {
@@ -85,15 +93,21 @@
   //   	$('.a').css({'transform':'scale(1)'})
   //   	$('.a').css({'width': '50vw'})
   //   	$('.a').css({'height': '40%'})
+  //   	$('.middle').css({'width': '35vw'})
+  //   	$('.middle').css({'top': '67.5%'})
+  //   	$('.middle').css({'height': '16%'})
 // // 
 		// $('.side_wrap').css({'height':'100%'})
 		// $('img').css({'width':'69%'})
 		// $('img').css({'transform': 'scaleX(1.12) scaleY(1.12)'})
 		// $('.bottom').css({'height': '12.8%'})
-		$('.bottom').css({'width': '50%'})
+		// $('.bottom').css({'width': '50%'})
   //   	$('.a').css({'transform':'scale(1)'})
   //   	$('.a').css({'width': '32vw'})
   //   	$('.a').css({'height': '23%'})
+  //   	$('.middle').css({'width: 27vw'})
+  //   	$('.middle').css({'top': '55.5%'})
+  //   	$('.middle').css({'height': '13%'})
 // // 
 		$('.side_wrap').css({'height':'100%'})
 		$('img').css({'width':'46%'})
@@ -103,6 +117,9 @@
     	$('.a').css({'transform':'scale(1.12)'})
     	$('.a').css({'width': '32vw'})
     	$('.a').css({'height': '23%'})
+    	$('.middle').css({'width': '30vw'})
+    	$('.middle').css({'top': '40%'})
+    	$('.middle').css({'height': '13%'})
 
 
 		// var bound = 60
@@ -116,6 +133,7 @@
 //     	$('.a').css({'transform':'scale(1)'})
 //     	$('.a').css({'width': '50vw'})
 //     	$('.a').css({'height':100-map_range(average, min, bound, 60, 75)+'%'})
+
 // }else{
 // 		$('.side_wrap').css({'height':'100%'})
 // 		$('img').css({'width':map_range(average, bound, min, 69, 46)+'%'})
@@ -135,10 +153,12 @@
 		<div class="a a_l"></div>
 		<div class="a a_r"></div>
 		<div class="side_wrap side_wrap_l">
+		<div class="middle"></div>
 			<img src="image/side-08.svg">
 			<div class="bottom"></div>
 		</div>
 		<div class="side_wrap side_wrap_r">
+		<div class="middle"></div>
 			<img src="image/side-08.svg">
 			<div class="bottom"></div>
 		</div>
