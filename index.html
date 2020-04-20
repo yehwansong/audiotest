@@ -29,6 +29,7 @@
 		height: 100%;
 		/*background-image: url('image/bg_3.png');*/
 		background-size: 100% 100%;
+		background: linear-gradient(#759dff,#ffffd5)
 	}
 	.side_wrap{
 		position: absolute;
@@ -52,18 +53,20 @@
 	    position: absolute;
 	}
 	.bottom{
+		box-shadow:0vh 0vh 1vh #1131ef;
 	    position: absolute;
 	    width: 50%;
 	    height: 9.5%;
-	    background: black;
+	    background: linear-gradient(to left, black 50%, transparent);
 	    bottom: 0;
 	    right: 0;
 	}
 	.narrow{
 	}
 	.a{
+		filter: drop-shadow(0vh 0vh 1vh #1131ef);
 		width: 50vw;
-		background-image: url('image/a-09.svg');
+		background-image: url('image/a-10.svg');
 		background-size: 100% 100%;
 		position: absolute;
 	}
@@ -75,10 +78,15 @@
 		right: 0;
 		transform-origin: right top
 	}
+	.side_wrap_l img,
+	.side_wrap_r img{
+		filter: drop-shadow(0vh 0vh 1vh #1131ef);
+	}
 	.middle{
+		box-shadow:0vh 0vh 1vh #1131ef;
 	    position: absolute;
 	    left: 0;
-	    background: black;
+	    background: #1b00a3;
 	    width: 50vw;
 	    top: 50%;
 	    height: 13%;
@@ -167,6 +175,7 @@
 	</head>
 
 	<body class="sapUiBody" id="content">
+    <div class="gradient"></div>
 	<div class="a_wrap">
 		<div class="a a_l"></div>
 		<div class="a a_r"></div>

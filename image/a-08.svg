@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  preserveAspectRatio="none" width="232.5" height="1043" viewBox="0 0 232.5 1043">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        mask: url(#mask);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        filter: url(#luminosity-noclip);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="129.05" y1="925.16" x2="129.05" y2="504.47"  preserveAspectRatio="none" gradientTransform="matrix(1, 0, 0, 1.14, 4.11, -64.91)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.05" stop-color="#1b00a3"/>
+      <stop offset="0.05" stop-color="#1a05a7" stop-opacity="0.95"/>
+      <stop offset="0.07" stop-color="#141fbc" stop-opacity="0.73"/>
+      <stop offset="0.1" stop-color="#0e35ce" stop-opacity="0.53"/>
+      <stop offset="0.12" stop-color="#0a48dd" stop-opacity="0.36"/>
+      <stop offset="0.15" stop-color="#0657ea" stop-opacity="0.23"/>
+      <stop offset="0.19" stop-color="#0363f3" stop-opacity="0.13"/>
+      <stop offset="0.23" stop-color="#016bfa" stop-opacity="0.05"/>
+      <stop offset="0.3" stop-color="#0070fe" stop-opacity="0.01"/>
+      <stop offset="0.47" stop-color="#0071ff" stop-opacity="0"/>
+      <stop offset="0.52" stop-color="#016dfc" stop-opacity="0.03"/>
+      <stop offset="0.6" stop-color="#0462f3" stop-opacity="0.13"/>
+      <stop offset="0.68" stop-color="#0850e4" stop-opacity="0.29"/>
+      <stop offset="0.77" stop-color="#0e37d0" stop-opacity="0.51"/>
+      <stop offset="0.86" stop-color="#1517b6" stop-opacity="0.8"/>
+      <stop offset="0.92" stop-color="#1b00a3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2"  preserveAspectRatio="none" x1="116.24" y1="1043" x2="116.24" gradientUnits="userSpaceOnUse">
+      <stop offset="0.11"/>
+      <stop offset="0.22" stop-color="#1b00a3"/>
+      <stop offset="0.47" stop-color="#0071ff"/>
+      <stop offset="0.76" stop-color="#f50002"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <filter id="luminosity-noclip" x="20.79" y="501.78" width="225.47" height="496.28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask" x="20.79" y="501.78" width="225.47" height="496.28" preserveAspectRatio="none" width="232.5" maskUnits="userSpaceOnUse">
+      <g class="cls-5">
+        <rect class="cls-1" x="48.8" y="510.1" width="169.4" height="479.56" transform="translate(-88.3 21.2) rotate(-6.8)"/>
+      </g>
+    </mask>
+    <linearGradient id="linear-gradient-3" x1="186.5" y1="295.06" x2="186.5" y2="-25.94" gradientTransform="translate(-80.8 705.6) scale(1.2 0.33)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.07" stop-color="#1b00a3"/>
+      <stop offset="0.51" stop-color="#1b00a3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <title>a</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <polygon class="cls-2" points="0 0 87.2 0 232.5 1043 124.5 1043 0 0"/>
+    <g class="cls-3">
+      <rect class="cls-4" x="-98.2" y="697.1" width="480.9" height="104.72" transform="translate(869.2 518.1) rotate(83.1)"/>
+    </g>
+  </g>
+</svg>

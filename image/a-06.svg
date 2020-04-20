@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none"  width="232.5" height="1043" viewBox="0 0 232.5 1043">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="232.5" height="1043" viewBox="0 0 232.5 1043">
   <defs>
     <symbol id="New_Symbol" data-name="New Symbol" viewBox="0 0 232.5 1043">
       <polygon points="0 0 87.2 0 232.5 1043 124.5 1043 0 0"/>
     </symbol>
   </defs>
-  <title>side</title>
+  <title>a</title>
   <g id="Layer_1" data-name="Layer 1">
     <use width="232.5" height="1043" xlink:href="#New_Symbol"/>
   </g>
