@@ -25,11 +25,29 @@
 		padding: 0
 	}
 	.a_wrap{
+		z-index: 10;
 		width: 100vw;
 		height: 100%;
 		/*background-image: url('image/bg_3.png');*/
 		background-size: 100% 100%;
-		background: linear-gradient(#759dff,#ffffd5)
+		transition:0.3s;
+	}
+	.bg{
+		width: 100vw;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: -1
+	}
+	.bg_1{
+		background: linear-gradient(#759dff,#ffffd5);
+	}
+	.bg_2{
+		opacity: 0;
+		transition: opacity 1s;
+		z-index: 0;
+		background: linear-gradient(#ed1d23,#ffffd5);
 	}
 	.side_wrap{
 		position: absolute;
@@ -53,7 +71,7 @@
 	    position: absolute;
 	}
 	.bottom{
-		box-shadow:0vh 0vh 1vh #1131ef;
+		/*box-shadow:0vh 0vh 1vh #1131ef;*/
 	    position: absolute;
 	    width: 50%;
 	    height: 9.5%;
@@ -61,6 +79,7 @@
 	    bottom: 0;
 	    right: 0;
 	}
+	/*ed1d23*/
 	.narrow{
 	}
 	.a{
@@ -100,7 +119,7 @@
 		var average = 0
 		var bound = 30
 		var min = 0
-		var max = 40
+		var max = 50
 			if(navigator && navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
 				navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(function(stream){
 					console.log('111111')
@@ -140,6 +159,8 @@
 
 					console.log(Math.round(average));
 		if(average<bound){
+			$('.bg_2').css({'opacity':0})
+			// $('.a_wrap').css({'background': 'linear-gradient(#ed1d23,#ffffd5)'})
 		    	$('.side_wrap').css({'height':map_range(average, min, bound, 60, 75)+'%'})
 				$('img').css({'width':'95%'})
 				$('img').css({'transform': 'scaleX(1.1) scaleY(1)'})
@@ -151,6 +172,8 @@
     	$('.middle').css({'top': '67.5%'})
     	$('.middle').css({'height': '16%'})
 		}else{
+			$('.bg_2').css({'opacity':1})
+			// $('.a_wrap').css({'background': 'linear-gradient(#759dff,#ffffd5)'})
 				$('.side_wrap').css({'height':'100%'})
 				$('img').css({'width':map_range(average, bound, max, 69, 46)+'%'})
 				$('img').css({'transform':'scaleX('+map_range(average, bound, max, 1.12, 1.8)+') scaleY('+map_range(average, bound, max, 1.12, 2.2)+')'})
@@ -173,6 +196,8 @@
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
+	<div class="bg_1 bg"></div>
+	<div class="bg_2 bg"></div>
 
 	<body class="sapUiBody" id="content">
     <div class="gradient"></div>
